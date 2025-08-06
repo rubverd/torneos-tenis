@@ -11,6 +11,8 @@ De esta forma, puedo reforzar mis conocimientos durante mi formación universita
 - Registro de jugadores.
 - Registro de resultados.
 - Gestión de los puntos de cada jugador.
+- Ranking global de todos los torneos.
 
 ## Característica(s) opcionales de la app
+- Distintos rankings en funciónd el número de torneos indicado.
 - Análisis de rendimiento (gráfica)
