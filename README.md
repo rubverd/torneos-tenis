@@ -3,6 +3,10 @@ Este proyecto consiste en realizar una aplicación web que permita gestionar tor
 
 El objetivo de este proyecto, además de facilitar la puntuación de cada uno de los jugadores según sus resultados en el torneo, es familiarizarse con el uso del framework web Flask y el lenguaje de programación de python, gestionando la conexión con la base de datos.
 
+De esta forma, puedo reforzar mis conocimientos durante mi formación universitaria.
+
+## Características básicas de la app
+
 - Crear y gestionar torneos.
 - Registro de jugadores.
 - Registro de resultados.
