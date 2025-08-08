@@ -1,28 +1,7 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Torneos de Tenis</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
-</head>
-<body>
-    <header>
-        <h1>🏆 Torneos de Tenis entre Amigos</h1>
-    </header>
+{% extends "layout.html" %}
 
-    <main>
-        <p>Bienvenido a la plataforma de gestión de torneos de tenis.</p>
-        <p>Selecciona una opción para comenzar:</p>
-        <ul>
-            <li>Crear nueva partida</li>
-            <li>Ver jugadores</li>
-            <li>Clasificación</li>
-        </ul>
-    </main>
+{% block title %}Inicio{% endblock %}
 
-    <footer>
-        <p>© 2025 Torneos de Tenis - Proyecto Flask</p>
-    </footer>
-</body>
-</html>
+{% block content %}
+    <p>Bienvenido a la aplicación de gestión de torneos de tenis.</p>
+{% endblock %}
