@@ -15,4 +15,4 @@ De esta forma, puedo reforzar mis conocimientos durante mi formación universita
 
 ## Característica(s) opcionales de la app
 - Distintos rankings en funciónd el número de torneos indicado.
-- Análisis de rendimiento (gráfica)
+- Análisis de rendimiento (gráficas)
