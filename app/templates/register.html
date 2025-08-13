@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %}Inicio de sesión{% endblock %}
+
+{% block content %}
+<div class="formulario">
+    <h1 class="titulo-login">Crear Usuario</h1>
+    <form method="POST">
+        <div class="nombre-usuario">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre">
+        </div>
+        <div class="apellidos">
+            <label for="apellidos">Apellidos:</label>
+            <input type="text" id="apellidos" name="apellidos">
+        </div>
+        <div class="nombre-usuario">
+            <label for="username">Nombre Usuario:</label>
+            <input type="text" id="username" name="username">
+        </div>
+        <div class="password">
+            <label for="password">Contraseña:</label>
+            <input type="password" id="password" name="password">
+        </div>
+        <div class="enviar-formulario">
+            <button type="submit">Registrarse</button>
+        </div>
+        <div class="olvidar-pass">
+            Si ya tienes una cuenta pinche <a class="iniciar-login" href="{{ url_for('auth.login') }}">aquí</a> para iniciar sesión
+        </div>
+
+        
+    </form>
+</div>
+    
+{% endblock %}

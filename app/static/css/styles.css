@@ -1,0 +1,154 @@
+/* =========================================================
+   ESTILOS GENERALES DE LA PÁGINA
+   ========================================================= */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f5f3; /* Fondo beige cálido */
+    margin: 0;
+    padding: 0;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* =========================================================
+   ENCABEZADO (HEADER)
+   ========================================================= */
+.arriba {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    /* Gradiente granate → rojo */
+    background: linear-gradient(to right, #8B1E3F 0%, #A22539 50%, #C00000 100%);
+}
+
+h1 {
+    margin: 0;
+    color: white;
+    font-size: 1.5rem;
+    text-align: center;
+    flex-grow: 1;
+}
+
+.home-link {
+    color: white;
+    text-decoration: none;
+}
+
+.user-icon {
+    text-decoration: none;
+    font-size: 2rem;
+    color: white;
+}
+
+/* =========================================================
+   FORMULARIO DE LOGIN
+   ========================================================= */
+
+/* Contenedor principal */
+.formulario {
+    background: #fff;
+    padding: 2rem;
+    margin: 2rem auto; /* centrado automático */
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.1);
+    width: 90%; /* ocupa el 90% del ancho disponible */
+    max-width: 500px; /* límite para que no sea enorme en pantallas grandes */
+}
+
+
+/* Título del formulario */
+.titulo-login {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #8B1E3F;
+    padding-bottom: 0.5rem; /* espacio con la línea */
+    border-bottom: 2px solid #8B1E3F; /* línea granate */
+    width: 100%;
+}
+
+
+/* Etiquetas */
+.formulario label {
+    display: block;
+    margin-bottom: 0.3rem;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Campos de entrada */
+.formulario input {
+    width: 100%;
+    padding: 0.7rem;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    outline: none;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.formulario input:focus {
+    border-color: #8B1E3F;
+    box-shadow: 0 0 5px rgba(139, 30, 63, 0.3);
+}
+
+/* Botón de enviar */
+.enviar-formulario button {
+    width: 100%;
+    padding: 0.8rem;
+    background-color: #8B1E3F;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.enviar-formulario button:hover {
+    background-color: #6e172f;
+}
+
+.formulario .olvidar-pass{
+    margin-top: 1rem;
+}
+
+.formulario .recordar-pass{
+    color: #8B1E3F;
+}
+.formulario .nav-register{
+    margin-top: 1rem;
+}
+
+.nav-register a {
+    display: block;           /* Para que ocupe todo el ancho como el botón */
+    margin-top: 1rem;
+    width: 95%;
+    padding: 0.8rem;
+    background-color: #8B1E3F;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;       /* Centrar el texto del enlace */
+    text-decoration: none;    /* Quitar subrayado */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.nav-register a:hover {
+    background-color: #6e172f;
+}
+
+
+
+/* Espaciado entre grupos de campos */
+.nombre-usuario,
+.apellidos,
+.password {
+    margin-bottom: 1rem;
+}

@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}Inicio de sesión{% endblock %}
+
+{% block content %}
+<div class="formulario">
+    <h1 class="titulo-login">Iniciar sesión</h1>
+    <form method="POST">
+        <div class="nombre-usuario">
+            <label for="username">Nombre Usuario:</label>
+            <input type="text" id="username" name="username">
+        </div>
+        <div class="password">
+            <label for="password">Contraseña:</label>
+            <input type="password" id="password" name="password">
+        </div>
+        <div class="enviar-formulario">
+            <button type="submit">Entrar</button>
+        </div>
+        <div class="olvidar-pass">
+            ¿Has olvidado la contraseña? Pinche <a class="recordar-pass" href="#">aquí</a> para iniciar sesión
+        </div>
+        <div class="nav-register">
+            En caso de no tener una cuenta en esta página, puede registrarse en el botón que hay justo debajo
+            <a href="{{ url_for('auth.register') }}" class="enviar-formulario">Registrarse</a>
+        </div>
+
+        
+    </form>
+</div>
+    
+{% endblock %}

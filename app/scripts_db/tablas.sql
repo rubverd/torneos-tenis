@@ -19,6 +19,7 @@ DROP TABLE IF EXISTS jugadores;
 CREATE TABLE jugadores (
     id INT AUTO_INCREMENT PRIMARY KEY,
     username VARCHAR(50) NOT NULL UNIQUE,
+    contraseña VARCHAR(50) NOT NULL,
     nombre VARCHAR(100) NOT NULL,
     apellidos VARCHAR(100),
     puntos_totales INT DEFAULT 0
