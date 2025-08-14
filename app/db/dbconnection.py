@@ -3,7 +3,6 @@ from pymysql.cursors import DictCursor
 from app.config import DB_HOST, DB_PORT, DB_USER, DB_PASSWORD, DB_NAME
 
 # Cargar variables de entorno desde .env (asegúrate de tenerlo en .gitignore)
-load_dotenv()
 
 class Connection:
     """
