@@ -1,7 +1,35 @@
 {% extends "layout.html" %}
-
-{% block title %}Inicio{% endblock %}
-
 {% block content %}
-    <p>Bienvenido a la aplicación de gestión de torneos de tenis.</p>
+<div class="container mt-4">
+    <!-- Presentación -->
+    <section class="informacion">
+        <h2>ℹ️ Bienvenido a Torneos Roland Bañós</h2>
+        <p>En esta página podrás seguir el ranking oficial de los jugadores,
+           crear torneos y gestionar las puntuaciones de manera sencilla.</p>
+        <p>Los torneos se actualizan automáticamente después de cada partido,
+           pero puedes ajustar las puntuaciones manualmente si es necesario.</p>
+    </section>
+
+    <!-- Ranking -->
+    <h2 class="ranking-title">🏆 Ranking de Jugadores</h2>
+    <div class="ranking-container">
+    {% for jugador in ranking %}
+        <div class="jugador-card">
+            <div class="posicion-medalla">
+                {% if loop.index == 1 %} 🥇
+                {% elif loop.index == 2 %} 🥈
+                {% elif loop.index == 3 %} 🥉
+                {% else %} {{ loop.index }} {% endif %}
+            </div>
+            <div class="info-jugador">
+                <span class="username">{{ jugador.username }}</span>
+                <span class="puntos">{{ jugador.puntos_totales }} pts</span>
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+
+
+
+</div>
 {% endblock %}

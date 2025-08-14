@@ -43,6 +43,102 @@ h1 {
     color: white;
 }
 
+/* ===========================================
+   ESTILO PARA LA PÁGINA INDEX
+   ===========================================
+*/
+
+.informacion{
+    display:block;
+    background: #fff;
+    padding: 1rem;
+    margin: 2rem auto; /* centrado automático */
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.1);
+    text-align: center;
+    width: 90%;
+}
+
+/* Estilo para el ranking */
+.ranking-title {
+    text-align: center;
+    position: relative;
+    margin: 30px 0; /* espacio arriba y abajo */
+    font-size: 2em;
+    color: #333;
+}
+
+.ranking-title::before,
+.ranking-title::after {
+    content: "";
+    display: block;
+    width: 50px; /* longitud de las líneas */
+    height: 3px; /* grosor de las líneas */
+    background-color: #800000; /* color granate */
+    margin: 10px auto; /* centrado y separación */
+}
+
+/* Contenedor general */
+.ranking-container {
+    background-color: #80000033; /* granate suave con transparencia */
+    padding: 30px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* Cada jugador */
+.jugador-card {
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+}
+
+/* Efecto hover para dinamismo */
+.jugador-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Posición + medalla */
+.posicion-medalla {
+    font-size: 1.5rem;
+    font-weight: bold;
+    width: 50px;
+    text-align: center;
+}
+
+/* Información del jugador */
+.info-jugador {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-left: 10px;
+}
+
+.username {
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.puntos {
+    background: linear-gradient(135deg, #800000, #a00000); /* degradado de granate oscuro a un poco más claro */
+    color: #fff; /* texto blanco para contraste */
+    padding: 5px 10px;
+    border-radius: 12px;
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* opcional: sombra sutil para que destaque */
+}
+
+
 /* =========================================================
    FORMULARIO DE LOGIN
    ========================================================= */
@@ -152,3 +248,5 @@ h1 {
 .password {
     margin-bottom: 1rem;
 }
+
+
