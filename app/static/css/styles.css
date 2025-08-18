@@ -59,6 +59,11 @@ h1 {
     width: 90%;
 }
 
+.aviso-importante {
+    color: red;
+    font-weight: bold;
+}
+
 /* Estilo para el ranking */
 .ranking-title {
     text-align: center;
@@ -333,3 +338,48 @@ h1 {
     transform: scale(1.05);
 }
 
+/*
+ *  ERROR
+*/
+/* ==============================
+   Estilos página de error
+   ============================== */
+.error-container {
+    max-width: 600px;
+    margin: 60px auto;
+    padding: 30px;
+    text-align: center;
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+    border-top: 6px solid #b22222; /* granate */
+    border-bottom: 6px solid #8b0000; /* más oscuro */
+}
+
+.mensaje-error {
+    font-size: 3rem;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.oops {
+    font-size: 1.2rem;
+    color: #444;
+    margin-bottom: 20px;
+}
+
+.img-oops {
+    max-width: 80%;
+    margin-top: 15px;
+    animation: floating 3s ease-in-out infinite;
+}
+
+/* Animación graciosa de flotación */
+@keyframes floating {
+    0%   { transform: translateY(0px); }
+    50%  { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
