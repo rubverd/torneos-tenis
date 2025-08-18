@@ -24,7 +24,7 @@ def register():
         conn = Connection()
 
         # Verificar si el usuario ya existe
-        existing_user = conn.select("SELECT * FROM jugadores WHERE username = %s", (username,), one=True)
+        existing_user = conn.select("SELECT * FROM jugadoress WHERE username = %s", (username,), one=True)
         if existing_user:
             flash("El nombre de usuario ya existe.", "error")
             return render_template('register.html')
@@ -32,7 +32,7 @@ def register():
         # Insertar usuario en la base de datos
         hashed_password = generate_password_hash(password)
         success = conn.execute(
-            "INSERT INTO jugadores (nombre, apellidos, username, password, puntos_totales) VALUES (%s, %s, %s, %s, %s)",
+            "INSERT INTO jugadoress (nombre, apellidos, username, password, puntos_totales) VALUES (%s, %s, %s, %s, %s)",
             (nombre, apellidos, username, hashed_password, 0)
         )
 

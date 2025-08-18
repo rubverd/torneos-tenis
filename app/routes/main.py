@@ -10,6 +10,6 @@ def index():
 def get_ranking():
     conn = Connection()
     ranking = conn.select(
-        "SELECT username, puntos_totales FROM jugadores ORDER BY puntos_totales DESC"
+        "SELECT username, puntos_totales FROM jugadoress ORDER BY puntos_totales DESC"
     )
     return ranking

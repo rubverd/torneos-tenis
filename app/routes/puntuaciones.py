@@ -10,14 +10,14 @@ def editar_puntuaciones():
     if request.method == "POST":
         try:
             # Traer todos los jugadores para saber qué IDs hay
-            jugadores = db.select("SELECT id, username, puntos_totales FROM jugadores")
+            jugadores = db.select("SELECT id, username, puntos_totales FROM jugadoress")
 
             for jugador in jugadores:
                 puntos_str = request.form.get(f"puntos_totales{jugador['id']}")
                 if puntos_str is not None:
                     nuevos_puntos = int(puntos_str)
                     db.execute(
-                        "UPDATE jugadores SET puntos_totales = %s WHERE id = %s",
+                        "UPDATE jugadoress SET puntos_totales = %s WHERE id = %s",
                         (nuevos_puntos, jugador['id'])
                     )
             
@@ -27,5 +27,5 @@ def editar_puntuaciones():
             flash(f"❌ Error al actualizar puntuaciones: {e}", "error")
 
     # Si es GET -> mostrar formulario
-    jugadores = db.select("SELECT id, username, puntos_totales FROM jugadores ORDER BY puntos_totales DESC")
+    jugadores = db.select("SELECT id, username, puntos_totales FROM jugadoress ORDER BY puntos_totales DESC")
     return render_template("puntuaciones.html", jugadores=jugadores)
