@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template
-from myapp.db.dbconnection import Connection
+from app.db.dbconnection import Connection
 
 main = Blueprint('main', __name__)
 

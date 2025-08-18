@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, request, redirect, url_for, flash
-from myapp.db.dbconnection import Connection
+from app.db.dbconnection import Connection
 
 points_edit = Blueprint("points_edit", __name__, url_prefix="/puntuaciones")
 
