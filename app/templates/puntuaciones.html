@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="edit-scores-container">
+    <h2>Editar Puntuaciones</h2>
+    <form method="POST" action="{{ url_for('points_edit.editar_puntuaciones') }}">
+        {% for jugador in jugadores %}
+        <div class="player-form">
+            <span class="username">{{ jugador.username }}</span>
+            <input 
+                type="number" 
+                name="puntos_totales{{ jugador.id }}" 
+                value="{{ jugador.puntos_totales }}" 
+                min="0"
+            >
+        </div>
+        {% endfor %}
+        <button type="submit" class="update-points">💾 Guardar cambios</button>
+    </form>
+</div>
+{% endblock %}

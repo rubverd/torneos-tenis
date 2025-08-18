@@ -6,8 +6,7 @@
         <h2>ℹ️ Bienvenido a Torneos Roland Bañós</h2>
         <p>En esta página podrás seguir el ranking oficial de los jugadores,
            crear torneos y gestionar las puntuaciones de manera sencilla.</p>
-        <p>Los torneos se actualizan automáticamente después de cada partido,
-           pero puedes ajustar las puntuaciones manualmente si es necesario.</p>
+        <p>Por el momento sólo es posible ver el ranking, registrar jugadores y actualizar las puntuaciones de cada jugador</p>
     </section>
 
     <!-- Ranking -->
@@ -28,6 +27,11 @@
         </div>
     {% endfor %}
     </div>
+
+    <div class="ranking-actions">
+        <a href="{{ url_for('points_edit.editar_puntuaciones') }}" class="btn-action">✏️ Editar Puntuaciones</a>
+    </div>
+
 
 
 
