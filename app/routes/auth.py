@@ -38,7 +38,7 @@ def register():
 
         if success:
             flash("Usuario registrado correctamente. ¡Ahora puedes iniciar sesión!", "success")
-            return render_template('index.html')
+            return redirect(url_for('main.index'))
         else:
             flash("Ocurrió un error al registrar el usuario.", "error")
             return render_template('register.html')
