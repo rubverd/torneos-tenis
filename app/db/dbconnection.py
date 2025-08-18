@@ -1,25 +1,19 @@
-import pymysql
-from pymysql.cursors import DictCursor
-from app.config import DB_HOST, DB_PORT, DB_USER, DB_PASSWORD, DB_NAME
-
-# Cargar variables de entorno desde .env (asegúrate de tenerlo en .gitignore)
+import os
+import psycopg2
+from psycopg2.extras import RealDictCursor
 
 class Connection:
     """
-    Clase para gestionar la conexión a la base de datos MySQL/MariaDB usando pymysql.
+    Clase para gestionar la conexión a PostgreSQL en Railway usando psycopg2.
     """
 
     def __init__(self):
-        # Parámetros de conexión obtenidos de variables de entorno
-        self.connection_params = {
-            "host": DB_HOST,
-            "port": DB_PORT,
-            "database": DB_NAME,
-            "user": DB_USER,
-            "password": DB_PASSWORD,
-            "charset": "utf8mb4",
-            "cursorclass": DictCursor
-        }
+        # Railway expone DATABASE_URL como variable de entorno
+        self.db_url = os.getenv("DATABASE_URL")
+
+        if not self.db_url:
+            raise ValueError("❌ No se encontró la variable de entorno DATABASE_URL")
+
         self.connection = None
 
     def get_connection(self):
@@ -28,8 +22,8 @@ class Connection:
         """
         if not self.connection:
             try:
-                self.connection = pymysql.connect(**self.connection_params)
-            except pymysql.MySQLError as e:
+                self.connection = psycopg2.connect(self.db_url, cursor_factory=RealDictCursor)
+            except psycopg2.Error as e:
                 print(f"❌ Error al conectarse a la base de datos: {e}")
                 self.connection = None
         return self.connection
@@ -52,7 +46,8 @@ class Connection:
         try:
             with conn.cursor() as cursor:
                 cursor.execute(query, args)
-                return cursor.fetchone() if one else cursor.fetchall()
+                result = cursor.fetchone() if one else cursor.fetchall()
+                return result
         except Exception as e:
             print(f"❌ Error al ejecutar SELECT: {e}")
             return None
@@ -60,6 +55,7 @@ class Connection:
     def execute(self, query: str, args: tuple = (), return_last_id: bool = False):
         """
         Ejecuta INSERT, UPDATE o DELETE.
+        Si `return_last_id=True`, devuelve el id insertado (requiere RETURNING en el query).
         """
         conn = self.get_connection()
         if not conn:
@@ -67,16 +63,20 @@ class Connection:
         try:
             with conn.cursor() as cursor:
                 cursor.execute(query, args)
-                last_id = cursor.lastrowid
+
+                if return_last_id:
+                    last_id = cursor.fetchone()
+                    conn.commit()
+                    return last_id
             conn.commit()
-            return last_id if return_last_id else True
+            return True
         except Exception as e:
             print(f"❌ Error al ejecutar operación: {e}")
             return False
 
     def call_procedure(self, procedure: str, args: tuple = ()):
         """
-        Llama a un procedimiento almacenado.
+        Llama a un procedimiento almacenado (en PostgreSQL sería una función).
         """
         conn = self.get_connection()
         if not conn:
